@@ -1,0 +1,11 @@
+package 第三章.第四版;
+
+public class CloseWay2 implements Closing {
+
+	@Override
+	public void closeWay() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

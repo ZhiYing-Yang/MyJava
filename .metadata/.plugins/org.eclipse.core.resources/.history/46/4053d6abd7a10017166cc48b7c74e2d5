@@ -1,0 +1,23 @@
+package 第三章.第四版;
+
+public class Elephant extends Animal {
+	
+	public void entering() {//实现父类中的抽象方法，只添加方法体即可
+		System.out.println("大象进入");//快捷键 sysout+alt+/
+		//System.out.println("width="+width);
+	}
+
+
+	//@Override
+	public void falseEntering() {
+		// TODO Auto-generated method stub
+		System.out.println("大象进不去");
+	}
+	
+
+
+	
+	
+	
+
+}

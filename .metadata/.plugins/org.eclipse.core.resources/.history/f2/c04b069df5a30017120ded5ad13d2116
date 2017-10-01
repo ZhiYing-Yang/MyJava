@@ -1,0 +1,54 @@
+package 第三章.第四版;
+
+public abstract class Animal {
+	//父类有，子类没有，子类继承。继承就是无偿使用。你的是我的，我的不一定是你的
+	//父类没有，子类有，属于子类特有，变异。
+	protected double width;
+	protected double height;
+	//static表示，是类的。不是累的对象的，有类名调用，不是由对象调用
+	//protected 专门为继承设计，子女不管在天涯海角都能看到父母，听到父母的声音。子类不管在哪个包中都能看到
+	//在其他包中的父类的成员变量和方法。父类的变量和方法在不同包中的子类中可以应用。当然同包更没问题
+	protected static int num_animal;
+	
+	public static int getNum_animal() {
+		return num_animal;
+	}
+	public static void setNum_animal(int num_animal) {
+		Animal.num_animal=num_animal;
+	}
+	
+	/*
+	 * 构造方法名与类名同，没有void，也没有其他返回类型。因为他默认返回是本类的对象。
+	 * new Elephant()时，默认执行Animal（），new出子类对象时
+	 * */
+	public Animal() {
+		num_animal++;
+	}
+
+	// 抽象方法没有方法体。抽象类可以有抽象方法和非抽象方法
+	// 抽象方法必须在其非抽象子类中实现。实现是指添加方法体。
+	// 非抽象类中，不能有抽象方法。
+	public abstract void enter();
+
+	public abstract void falseEnter();
+
+	public double getWidth() {
+		return width;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	
+	public int getNum() {
+		return num;
+	}
+}
