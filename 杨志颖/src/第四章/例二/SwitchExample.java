@@ -2,7 +2,7 @@ package 第四章.例二;
 
 public class SwitchExample {
 	private int grade;
-	public char dengji;
+	private char dengji;
 
 	public void setGrade(int grade) {
 		this.grade = grade;
