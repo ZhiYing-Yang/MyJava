@@ -17,7 +17,7 @@ public class MyGridLayout extends JFrame{
 		
 		//FlowLayout在java.awt包中，他是从左往右自动排放
 		this.setLayout(new GridLayout(3, 2));
-		JPanel jp1=new JPanel();
+		JPanel jp1=new JPanel();//JPanel默认是流布局，观看流布局改为三行两列格布局
 		//jp1.setLayout(new GridLayout(1, 2));
 		this.add(jp1);	//将jp1添加到
 		
@@ -26,13 +26,16 @@ public class MyGridLayout extends JFrame{
 		jp1.add(new JButton("button3"));//占用第二列
 		
 		JPanel jp2=new JPanel();//三行两列中的第二行
+		jp2.setLayout(new BorderLayout());
 		this.add(jp2);
-		jp2.add(new JButton("button2"));//第一列
-		jp2.add(new JButton("button4"));//第二列
+		jp2.add(new JButton("button2"), "West");//第一列
+		jp2.add(new JButton("button4"), "East");//第二列
 		
 		JPanel jp3=new JPanel();
+		jp3.setLayout(new GridLayout(1, 2));
 		this.add(jp3);
 		jp3.add(new JButton("button5"));
+		jp3.add(new JButton("button6"));
 		
 		this.setVisible(true);
 		

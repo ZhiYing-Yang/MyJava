@@ -6,7 +6,8 @@ import javax.swing.*;
 
 /*
  * JFrame是一个矩形窗口，里面放我们布局的图形元素。
- * java中只有两种最外的独立窗口
+ * java中只有两种最外的独立窗口，用于放其他图形元素。另一个是JDialog。其他的入JPanel等不能独立存在
+ * 即必须存在于JFrame或JDialog中。存放其他图形元素的元素称为容器。最高父类为Component
  * */
 public class MyFlowLayout extends JFrame{
 	public MyFlowLayout() {
