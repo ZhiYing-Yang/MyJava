@@ -10,10 +10,8 @@ public class Client {
 		
 		Elephant aElephant = new Elephant();
 		aScene.setaElephant(aElephant);
-		
 		IceBox aIceBox= new IceBox();
 		aScene.setaIceBox(aIceBox);
-		
 		aScene.action();
 	}
 }

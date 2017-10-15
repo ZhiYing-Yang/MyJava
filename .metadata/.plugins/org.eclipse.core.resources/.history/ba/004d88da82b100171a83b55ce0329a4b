@@ -5,7 +5,7 @@ public class Elephant {	//找过去代码的方法，file-->switch	workspace-->b
 	//int类型默认值为0，char类型的默认值为空对象类型默认值为null，boolean默认false
 	private double width;//成员变量，与局部变量不同，在方法之外，而且有默认值，double类型默认0.0。
 	private double height;//使用场合：1、对象的属性，2、变量在几个方法中都要用到。
-	//与static 变量属于类，由类名调用，成员方法属于对象，由对象来引用
+	//static 变量属于类，由类名调用，成员方法属于对象，由对象来引用
 	
 	public void enter() {
 		//对象行为设计为成员方法，成员方法属于对象，由对象调用，而static方法属于类

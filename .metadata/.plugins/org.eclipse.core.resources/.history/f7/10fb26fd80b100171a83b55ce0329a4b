@@ -1,6 +1,6 @@
 package 第三章.第二版;
 
-public class Elephant {	//找过去代码的方法，file-->switch	workspace-->browse
+public class Elephant {	//找过去代码的方法，file--switch	workspace--browse
 	//成员变量一般设计成private类型的，即只允许在本类的方法中使用它
 	//int类型默认值为0，char类型的默认值为空对象类型默认值为null，boolean默认false
 	private double width;//成员变量，与局部变量不同，在方法之外，而且有默认值，double类型默认0.0。

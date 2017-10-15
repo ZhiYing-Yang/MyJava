@@ -3,7 +3,7 @@ package 第三章.第二版;
 
 public class Scene {//把已有的类组织 起来 一起完成任务
 	
-	private Elephant aElephant;
+	private Animal aAnimal;
 	private IceBox aIceBox;
 	private Person aPerson; //= new Person();
 	/*
