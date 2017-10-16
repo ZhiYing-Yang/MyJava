@@ -31,31 +31,39 @@ public class ButtonCompoent extends JFrame implements ActionListener{
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(4, 1));
 		this.add(panel);	//显然在text右边
-		panel.add(new JLabel("name:"));//panel的最左边
-		text_name = new JTextField(12);//在label的右边
-		panel.add(text_name);		   //显然在label右边
 		
-		panel.add(new JLabel("sex:"));
+		JPanel panel1 = new JPanel();
+		panel1.setLayout(new GridLayout(1, 2));
+		panel1.add(new JLabel("name:"));//panel的最左边
+		text_name = new JTextField(12);//在label的右边
+		panel1.add(text_name);		   //显然在label右边
+		panel.add(panel1);
+		
+		JPanel panel2 = new JPanel();
+		panel2.setLayout(new GridLayout(1, 3));
+		panel2.add(new JLabel("sex:"));
 		ButtonGroup bg = new ButtonGroup();
 		rb = new JRadioButton[sex.length];//用字符串数组生成单选按钮数组[]
 		for(int i=0; i<sex.length; i++) { //分别把字符串数组中的元素加到单选按钮数组中
 			rb[i] = new JRadioButton(sex[i]);//注意这里是生成数组元素，与34行区别()
 			bg.add(rb[i]);
-			panel.add(rb[i]);	//注意不是add(bg)
+			panel2.add(rb[i]);	//注意不是add(bg)
 		}
+		panel.add(panel2);
 		
-		panel.add(new JLabel("hobbies:"));
+		JPanel panel3 = new JPanel();
+		panel3.setLayout(new GridLayout(1, 3));
+		panel3.add(new JLabel("hobbies:"));
 		cb = new JCheckBox[hobbies.length];
 		for(int i=0; i<hobbies.length; i++) { 
 			cb[i] = new JCheckBox(hobbies[i]);
-			panel.add(cb[i]);	
+			panel3.add(cb[i]);	
 		}
+		panel.add(panel3);
 		
 		btn_ok = new JButton("ok");
-		btn_ok.addActionListener(this);//为btn_ok添加事件监听器，本类对象this作为监听器。按钮要单击后有反应，需要这个语句
+		btn_ok.addActionListener(this);//为btn_ok添加事件监听器，本类对象this作为监听器。按钮要单击后有反应，需要这个语句	
 		panel.add(btn_ok);
-		
-		
 		
 		this.setVisible(true);
 		
