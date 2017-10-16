@@ -29,7 +29,6 @@ public class ButtonCompoent extends JFrame implements ActionListener{
 		text = new JTextArea(5, 10);
 		this.add(text, "West");//West中的w要大写
 		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(4, 1));
 		this.add(panel);	//显然在text右边
 		panel.add(new JLabel("name:"));//panel的最左边
 		text_name = new JTextField(12);//在label的右边

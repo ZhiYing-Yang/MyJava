@@ -1,4 +1,4 @@
-package 第六章.例九;//作业1：将右边的panel改成四行一列，第二行，第三行改成一行三列
+package 第六章.例十;//作业1：将右边的panel改成四行一列，第二行，第三行改成一行三列
 
 import java.awt.*;
 import java.awt.event.*;
@@ -10,14 +10,14 @@ import javax.swing.*;
  * JFrame是一个矩形窗口，里面放我们布局的图形元素。
  * java中只有两种最外的独立窗口
  * */
-public class ButtonCompoent extends JFrame implements ActionListener{
+public class ItemCompoent extends JFrame implements ActionListener{
 	JTextArea text;
 	JTextField text_name;
 	JButton btn_ok;
 	JRadioButton rb[];
 	JCheckBox cb[];
 	String str="";
-	public ButtonCompoent() {
+	public ItemCompoent() {
 		super("按钮组件示例");
 		String []sex = {"male", "female"};
 		String []hobbies = {"sports", "music"};
