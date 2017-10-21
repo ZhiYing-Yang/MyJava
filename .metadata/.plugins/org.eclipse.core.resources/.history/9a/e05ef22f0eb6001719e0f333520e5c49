@@ -1,0 +1,11 @@
+package LastYearTest.T1;
+
+public class OperateWay1 implements OperateWay {
+
+	@Override
+	public void operateWay() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

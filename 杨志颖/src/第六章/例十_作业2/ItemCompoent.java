@@ -14,12 +14,12 @@ public class ItemCompoent extends JFrame {
 	JList list_shows;
 	JLabel label;
 	Object[] channel = { "大象", "猫" };
-	Object[][] shows = { { "冰箱" }, { "笼子" } };
+	Object[][] shows = { { "冰箱","笼子" }, { "冰箱","笼子" } };
 
 	public ItemCompoent() {
 		super("列表组件示例");
 
-		this.setBounds(100, 100, 300, 200);// (x, y, width, high);
+		this.setBounds(100, 100, 500, 200);// (x, y, width, high);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);// 关闭时退出
 		this.setLayout(new FlowLayout());
 
@@ -46,7 +46,7 @@ public class ItemCompoent extends JFrame {
 			public void valueChanged(ListSelectionEvent e) {
 				String str = cb_channel.getSelectedItem().toString();
 				if (!list_shows.isSelectionEmpty()) {
-					str = "" + list_shows.getSelectedValue();
+					str += "进" + list_shows.getSelectedValue();
 				}
 				label.setText("你选中的是" + str);
 			}
