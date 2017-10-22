@@ -15,5 +15,11 @@ public class Window extends JFrame{
 		
 		tu_select = new JComboBox(tuxing);
 		this.add(tu_select);
+		
+		this.setVisible(true);
+	}
+	
+	public static void main(String args[]) {
+		new Window();
 	}
 }
