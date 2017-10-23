@@ -22,8 +22,8 @@ public class Fruit {
 		this.after = this.now-after;
 	}
 	
-	public void setPath() {
-		
+	public void setPath(String path) {
+		this.path = path;
 	}
 	public void echoInfo() {
 		System.out.println(fruit_name+"进货前："+before+"\t进货后："+now+"\t销售后："+after);
