@@ -6,10 +6,13 @@ public class Fruit {
 	private int now;
 	private int after;
 	public Fruit() {
-		this.before = 10;
+		before = 10;
+	}
+	public Fruit(int before) {
+		this.before = before;
 	}
 	public Fruit(String fruit_name) {
-		this();
+		this (10);
 		this.fruit_name=fruit_name;
 	}
 	public void setJinhuo(int now) {
