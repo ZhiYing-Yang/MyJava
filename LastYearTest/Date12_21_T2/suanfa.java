@@ -6,8 +6,7 @@ public class suanfa {
 		// TODO Auto-generated method stub
 		char []zimu = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'k'};
 		for(int i=0; i<zimu.length; i++) {
-			int mlength=((zimu.length+1)*3-i-2)/2;
-			for(int m=0; m<mlength; m++) {
+			for(int m=0; m<((zimu.length+1)*3-(i+2))/2; m++) {
 				System.out.print(" ");
 			}
 			
@@ -19,7 +18,7 @@ public class suanfa {
 			System.out.println();
 			
 			str =str+","+str+","+str+"A";
-			for(int m=0; m<mlength-i-2; m++) {
+			for(int m=0; m<((zimu.length+1)-(i+2))*3/2; m++) {
 				System.out.print(" ");
 			}
 			System.out.println(str);
