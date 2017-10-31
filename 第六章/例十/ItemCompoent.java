@@ -1,5 +1,7 @@
 package 第六章.例十;//作业1：将右边的panel改成四行一列，第二行，第三行改成一行三列
-				   //作业2：大象进冰箱，动物类用JComboBox，包括大象、猫，容器类用JList， 包括冰箱、笼子	
+
+				//作业2：大象进冰箱，动物类用JComboBox，包括大象、猫，容器类用JList， 包括冰箱、笼子	
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

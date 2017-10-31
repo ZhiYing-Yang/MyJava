@@ -9,8 +9,8 @@ public class BitOperator {
 		System.out.println("z = " + z);
 		z = x & y;
 		System.out.println("z = " + z);
-		z=x^y;
-		System.out.println("z="+z);
+		z = x ^ y;
+		System.out.println("z=" + z);
 	}
 
 	public static void main(String[] args) {

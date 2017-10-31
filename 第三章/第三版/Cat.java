@@ -7,7 +7,7 @@ public class Cat extends Animal {
 		System.out.println("猫进入");
 	}
 
-	//@Override
+	// @Override
 	public void animalFalseEnter() {
 		// TODO Auto-generated method stub
 		System.out.println("猫进不去");

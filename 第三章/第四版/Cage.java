@@ -2,15 +2,15 @@ package 第三章.第四版;
 
 public class Cage extends Box {
 
-	//@Override
+	// @Override
 	public void open() {
-		
+
 		System.out.println("笼子打开");
 	}
 
-	//@Override
+	// @Override
 	public void close() {
-		
+
 		System.out.println("笼子关闭");
 	}
 

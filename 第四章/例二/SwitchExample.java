@@ -34,27 +34,27 @@ public class SwitchExample {
 		}
 		return dengji;
 	}
+
 	public void work3() {
-		int []a= new int[5];
-		for(int i=0; i<5; i++) {
-			a[i]=i+1;
+		int[] a = new int[5];
+		for (int i = 0; i < 5; i++) {
+			a[i] = i + 1;
 			System.out.print(a[i]);
 			System.out.print("   ");
 		}
 		System.out.println();
-		for(int i=1; i<5; i++) {
-			
-			for(int m=0; m<i; m++){
+		for (int i = 1; i < 5; i++) {
+
+			for (int m = 0; m < i; m++) {
 				System.out.print("  ");
 			}
-			int num=5-i;
-			for(int j=0; j<num; j++){
-				a[j]=a[j]+a[j+1];
+			int num = 5 - i;
+			for (int j = 0; j < num; j++) {
+				a[j] = a[j] + a[j + 1];
 				System.out.print(a[j]);
-				if(a[j]>10) {
+				if (a[j] > 10) {
 					System.out.print("  ");
-				}
-				else {
+				} else {
 					System.out.print("   ");
 				}
 			}
