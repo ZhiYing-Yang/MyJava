@@ -1,16 +1,18 @@
-package T1;
+package 考试.T_1;
 
 public class Scene {
 	private Person aPerson;
 	private Car aCar;
+
 	public void setaPerson(Person aPerson) {
 		this.aPerson = aPerson;
 	}
+
 	public void setaCar(Car aCar) {
 		this.aCar = aCar;
 	}
-	
-	public void action(){
+
+	public void action() {
 		aPerson.drive();
 		aCar.run();
 	}

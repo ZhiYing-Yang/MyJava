@@ -1,10 +1,10 @@
-package T3;
+package è€ƒè¯•.T_3;
 
 public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Window a = new Window();
-		a.setTitle("ÇóÔ²ÐÎµÄÃæ»ý");
+		a.setTitle("ï¿½ï¿½Ô²ï¿½Îµï¿½ï¿½ï¿½ï¿½");
 		a.setBounds(100, 100, 400, 200);
 	}
 
