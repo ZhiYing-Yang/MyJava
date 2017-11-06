@@ -1,39 +1,41 @@
-package T3;
+package è€ƒè¯•.T_3;
 
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
-public class Window extends JFrame implements ActionListener{
+
+public class Window extends JFrame implements ActionListener {
 	JTextArea text;
 	JTextField R, PI;
 	JButton calculate;
 	Circle aCircle;
-	public Window(){
+
+	public Window() {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		text =new JTextArea(5, 5);
+
+		text = new JTextArea(5, 5);
 		this.add(text, "West");
-		
+
 		JPanel p1 = new JPanel();
 		p1.setLayout(new FlowLayout());
 		this.add(p1, "East");
-		
+
 		JLabel banjing, pai;
-		banjing = new JLabel("°ë¾¶:");
+		banjing = new JLabel("ï¿½ë¾¶:");
 		p1.add(banjing);
-		
+
 		R = new JTextField(5);
 		p1.add(R);
-		
-		pai = new JLabel("¦Ð:");
+
+		pai = new JLabel("ï¿½ï¿½:");
 		p1.add(pai);
-		
+
 		PI = new JTextField(5);
 		PI.setText("3.14");
 		p1.add(PI);
-		
-		calculate = new JButton("¼ÆËãÃæ»ý");
+
+		calculate = new JButton("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		p1.add(calculate);
 		calculate.addActionListener(this);
 		this.setVisible(true);
@@ -42,16 +44,15 @@ public class Window extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		try{
+		try {
 			double r = Double.valueOf(R.getText());
 			double pi = Double.valueOf(PI.getText());
-			aCircle= new Circle();
+			aCircle = new Circle();
 			aCircle.setR(r);
 			aCircle.setPi(pi);
-			text.append("Ô²ÐÎµÄ°ë¾¶Îª£º"+r+"\nPIÖµÎª£º"+pi+"\nÃæ»ýÎª£º"+aCircle.area()+"\n");
-		}
-		catch(Exception ex){
-			text.append("ÎÞ·¨¼ÆËãÃæ»ý£º"+ex.toString());
+			text.append("Ô²ï¿½ÎµÄ°ë¾¶Îªï¿½ï¿½" + r + "\nPIÖµÎªï¿½ï¿½" + pi + "\nï¿½ï¿½ï¿½Îªï¿½ï¿½" + aCircle.area() + "\n");
+		} catch (Exception ex) {
+			text.append("ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + ex.toString());
 		}
 	}
 }
