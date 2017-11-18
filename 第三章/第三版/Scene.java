@@ -1,6 +1,6 @@
 package 第三章.第三版;//作业：多媒体设备第三版
 
-public class Scene {// 不同的动物，容器，控制器开关的一方，随时可能变化，但该类不能变
+public class Scene implements Runnable{// 不同的动物，容器，控制器开关的一方，随时可能变化，但该类不能变
 
 	// 面向抽象编程，面向接口编程
 	private Animal aAnimal;
@@ -31,22 +31,19 @@ public class Scene {// 不同的动物，容器，控制器开关的一方，随
 		this.aController = aController;
 	}
 
-	public void action() {
+	public void run() {
 		// 都是抽象类或接口类型的变量在调用方法，没有具体的变量
 		// 因此，叫做面向抽象编程
-		aController.controllerOpen();
-		aBox.boxOpen();
-		if (aBox.getHeight() < aAnimal.getHeight()) {
-			System.out.println("超高");
-			aAnimal.animalFalseEnter();
-		} else if (aBox.getWidth() < aAnimal.getWidth()) {
-			System.out.println("超宽");
-			aAnimal.animalFalseEnter();
-		} else {
-			aAnimal.animalEnter();
-
+		synchronized (aController) {
+			synchronized (aBox) {
+				synchronized(aAnimal) {
+				aController.controllerOpen();
+				aBox.boxOpen();
+				aAnimal.animalEnter();
+				aController.controllerClose();
+				aBox.boxClose();
+				}
+			}
 		}
-		aController.controllerClose();
-		aBox.boxClose();
 	}
 }

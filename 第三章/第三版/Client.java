@@ -26,21 +26,25 @@ public class Client {
 		Controller aController = new Person();
 		aScene.setaController(aController);
 
-		aScene.action();
+		
 
 		// 场景二：猫，笼子，电
+		Scene bScene = new Scene();
 		Animal bAnimal = new Cat();
-		aScene.setaAnimal(bAnimal);
+		bScene.setaAnimal(bAnimal);
 		bAnimal.setHeight(1.8);
 
 		Box aCage = new Cage();
-		aScene.setaBox(aCage);
+		bScene.setaBox(aCage);
 		aCage.setHeight(1.9);
 
 		Controller aElectricity = new Electricity();
-		aScene.setaController(aElectricity);
+		bScene.setaController(aElectricity);
 
-		aScene.action();
+		//for(int i=0; i<10; i++) {
+			new Thread(aScene).start();
+			new Thread(bScene).start();
+		
 
 	}
 }
