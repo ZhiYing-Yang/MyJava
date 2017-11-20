@@ -1,9 +1,20 @@
 package 第八章.例六;
 
 public class Buffer {
-	private char chBuffer;
+	private char chBuffer;	//共享缓冲区
+	private boolean bufferEmpty = true;
+	
 	public synchronized void put(char ch) {
+		while(!bufferEmpty) {
+			try{
+				wait();
+			}catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		chBuffer = ch;//将生产出的产品放到缓冲区
+		bufferEmpty = false;
+		notify();
 	}
 
 	public synchronized char get() {//从缓冲区提取字符

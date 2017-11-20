@@ -1,6 +1,6 @@
-package 第三章.第四版;//作业：多媒体设备第三版
+package 第三章.第五版;//作业：多媒体设备第三版
 
-public class Scene extends Thread {// 不同的动物，容器，控制器开关的一方，随时可能变化，但该类不能变
+public class Scene {// 不同的动物，容器，控制器开关的一方，随时可能变化，但该类不能变
 
 	// 面向抽象编程，面向接口编程
 	private Animal aAnimal;
@@ -9,9 +9,6 @@ public class Scene extends Thread {// 不同的动物，容器，控制器开关
 	private Entering aEntering;
 	private Opening aOpening;
 	private Closing aClosing;
-
-	private boolean boxOpend = true;
-	private boolean animalEntered = false;
 
 	public Animal getaAnimal() {
 		return aAnimal;
@@ -61,43 +58,26 @@ public class Scene extends Thread {// 不同的动物，容器，控制器开关
 		this.aClosing = aClosing;
 	}
 
-	public void run() {
+	public void action() {
 		// 都是抽象类或接口类型的变量在调用方法，没有具体的变量
 		// 因此，叫做面向抽象编程
-		synchronized (aController) {
-			aController.controllerOpen();
-			synchronized (aBox) {
-				while (!boxOpend) {
-					try {
-						wait();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				aBox.open();
-				boxOpend = false;
-				notify();
+		aController.controllerOpen();
+		aBox.open();
+		aOpening.openWay();
+		if (aBox.getHeight() < aAnimal.getHeight()) {
+			System.out.println("超高");
+			aAnimal.falseEnter();
+		} else if (aBox.getWidth() < aAnimal.getWidth()) {
+			System.out.println("超宽");
+			aAnimal.falseEnter();
+		} else {
+			aEntering.enterWay();
+			aAnimal.enter();
 
-				aOpening.openWay();
-				aEntering.enterWay();
-				synchronized (aAnimal) {
-
-					while (animalEntered) {
-						try {
-							wait();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-					aAnimal.enter();
-					animalEntered = true;
-					notify();
-				}
-				aController.controllerClose();
-				aClosing.closeWay();
-				aBox.close();
-			}
 		}
+		aController.controllerClose();
+		aClosing.closeWay();
+		aBox.close();
 
 	}
 
