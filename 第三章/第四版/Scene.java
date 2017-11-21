@@ -61,44 +61,20 @@ public class Scene extends Thread {// 不同的动物，容器，控制器开关
 		this.aClosing = aClosing;
 	}
 
-	public void run() {
+	public synchronized void action() {
 		// 都是抽象类或接口类型的变量在调用方法，没有具体的变量
 		// 因此，叫做面向抽象编程
-		synchronized (aController) {
-			aController.controllerOpen();
-			synchronized (aBox) {
-				while (!boxOpend) {
-					try {
-						wait();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				aBox.open();
-				boxOpend = false;
-				notify();
-
-				aOpening.openWay();
-				aEntering.enterWay();
-				synchronized (aAnimal) {
-
-					while (animalEntered) {
-						try {
-							wait();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-					aAnimal.enter();
-					animalEntered = true;
-					notify();
-				}
-				aController.controllerClose();
-				aClosing.closeWay();
-				aBox.close();
-			}
-		}
-
+		aController.controllerOpen();
+		aBox.open();
+		aOpening.openWay();
+		aEntering.enterWay();
+		aAnimal.enter();
+		aController.controllerClose();
+		aClosing.closeWay();
+		aBox.close();
+	}
+	public void run() {
+		this.action();
 	}
 
 }
