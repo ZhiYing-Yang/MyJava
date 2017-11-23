@@ -33,17 +33,22 @@ public class Client {
 		Controller aElectricity = new Electricity();
 		bScene.setaController(aElectricity);
 
-		Entering bEntering = new EnterWay1();
+		Entering bEntering = new EnterWay2();
 		bScene.setaEntering(bEntering);
 
-		Opening bOpening = new OpenWay1();
+		Opening bOpening = new OpenWay2();
 		bScene.setaOpening(bOpening);
 
-		Closing bClosing = new CloseWay1();
+		Closing bClosing = new CloseWay2();
 		bScene.setaClosing(bClosing);
 
 		aScene.start();
-		
+		try {
+			Thread.sleep(10);
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
+		}
 		bScene.start();
 
 	}
