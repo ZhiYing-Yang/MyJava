@@ -9,7 +9,7 @@ public class Scene extends Thread {
 	private Closing aClosing;
 
 	private boolean boxOpend = false;
-	private boolean animalEntered = false;
+	private boolean controllerDo = false;
 
 	public Animal getaAnimal() {
 		return aAnimal;
@@ -60,35 +60,22 @@ public class Scene extends Thread {
 	}
 
 	public void run() {
-		synchronized (aController) {
+		synchronized (Controller.class) {
 			aController.controllerOpen();
-			synchronized (aBox) {
-				while (boxOpend) {
-					try {
-						wait();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
+			synchronized (Box.class) {
 				aBox.open();
-				boxOpend = true;
-				aBox.notify();
+				
 				aOpening.openWay();
-				while(animalEntered) {
-					try {
-						wait();
-					}catch(InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
 				aAnimal.enter();
-				animalEntered = true;
-				aBox.notify();
+				
 				aEntering.enterWay();
+				
 				aController.controllerClose();
 				aClosing.closeWay();
 				aBox.close();
+				
 			}
+			
 		}
 	}
 

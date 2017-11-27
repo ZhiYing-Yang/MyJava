@@ -19,9 +19,17 @@ public class Buffer {
 
 	public synchronized char get() {//从缓冲区提取字符
 		// TODO Auto-generated method stub
+		while(bufferEmpty) {
+			try {
+				wait();
+			}catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		char chr = chBuffer;//把缓冲区的chBuffer赋给临时变量chr
 		chBuffer = '\0';//chBuffer提取后，赋空
-		
+		bufferEmpty = true;
+		notify();
 		return chr;//把chr返回。
 	}
 
