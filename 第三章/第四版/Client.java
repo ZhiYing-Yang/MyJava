@@ -22,7 +22,7 @@ public class Client {
 		
 		Closing aClosing = new CloseWay1();
 		aScene.setaClosing(aClosing);
-
+		
 		Scene bScene = new Scene();
 		Animal bAnimal = new Cat();
 		bScene.setaAnimal(bAnimal);
@@ -43,13 +43,7 @@ public class Client {
 		bScene.setaClosing(bClosing);
 
 		aScene.start();
-		try {
-			Thread.sleep(10);
-		}
-		catch(InterruptedException e) {
-			e.printStackTrace();
-		}
 		bScene.start();
-
+		
 	}
 }
