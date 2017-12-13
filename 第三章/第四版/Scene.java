@@ -1,5 +1,4 @@
 package 第三章.第四版;
-
 public class Scene extends Thread {
 	private Animal aAnimal;
 	private Box aBox;
@@ -91,5 +90,4 @@ public class Scene extends Thread {
 			}
 		}
 	}
-
 }
