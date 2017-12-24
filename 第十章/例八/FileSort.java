@@ -18,7 +18,7 @@ public class FileSort {
 		boolean insert = false;
 		while (true) {
 			try {
-				int temp = this.rafile.readInt(); // 读取一个整数
+				int temp = this.rafile.readInt(); // 读取一个整数 当位置达到末尾时抛出异常
 				if (temp > k) {
 					long currPos = this.rafile.getFilePointer(); // 获取当前位置
 					this.rafile.seek(currPos - 4); // 后退四个字节，对int类型
@@ -27,6 +27,7 @@ public class FileSort {
 					insert = true;
 				}
 			} catch (EOFException ioe) {
+				//ioe.printStackTrace();
 				if (insert == false) {
 					this.rafile.writeInt(k); // 写入k
 				}
